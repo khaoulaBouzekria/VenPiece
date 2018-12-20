@@ -1,0 +1,14 @@
+C:\Users\mohamed.bouzekria\Source\Repos\DAL.VenPiece\DAL.VenPiece\bin\Debug\DAL.VenPiece.dll.config
+C:\Users\mohamed.bouzekria\Source\Repos\DAL.VenPiece\DAL.VenPiece\bin\Debug\DAL.VenPiece.dll
+C:\Users\mohamed.bouzekria\Source\Repos\DAL.VenPiece\DAL.VenPiece\bin\Debug\DAL.VenPiece.pdb
+C:\Users\mohamed.bouzekria\Source\Repos\DAL.VenPiece\DAL.VenPiece\bin\Debug\EntityFramework.dll
+C:\Users\mohamed.bouzekria\Source\Repos\DAL.VenPiece\DAL.VenPiece\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\mohamed.bouzekria\Source\Repos\DAL.VenPiece\DAL.VenPiece\bin\Debug\EntityFramework.xml
+C:\Users\mohamed.bouzekria\Source\Repos\DAL.VenPiece\DAL.VenPiece\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\mohamed.bouzekria\Source\Repos\DAL.VenPiece\DAL.VenPiece\obj\Debug\DAL.VenPiece.csprojResolveAssemblyReference.cache
+C:\Users\mohamed.bouzekria\Source\Repos\DAL.VenPiece\DAL.VenPiece\obj\Debug\DAL.VenPiece.csproj.CoreCompileInputs.cache
+C:\Users\mohamed.bouzekria\Source\Repos\DAL.VenPiece\DAL.VenPiece\obj\Debug\DAL.VenPiece.csproj.CopyComplete
+C:\Users\mohamed.bouzekria\Source\Repos\DAL.VenPiece\DAL.VenPiece\obj\Debug\DAL.VenPiece.dll
+C:\Users\mohamed.bouzekria\Source\Repos\DAL.VenPiece\DAL.VenPiece\obj\Debug\DAL.VenPiece.pdb
+C:\Users\mohamed.bouzekria\Source\Repos\DAL.VenPiece\DAL.VenPiece\obj\Debug\DAL.VenPiece.Migrations.CreateClient.resources
+C:\Users\mohamed.bouzekria\Source\Repos\DAL.VenPiece\DAL.VenPiece\obj\Debug\DAL.VenPiece.csproj.GenerateResource.cache
