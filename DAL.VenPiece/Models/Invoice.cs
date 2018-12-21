@@ -9,7 +9,7 @@ namespace DAL.VenPiece.Models
     public class Invoice
     {
         public Guid InvoiceId { get; set; }
-        public DateTime InvoiceDate { get; set; }
-        public DateTime DeadLineDate { get; set; }
+        public DateTime Date { get; set; }
+        public DateTime PayementDeadline { get; set; }
     }
 }

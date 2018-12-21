@@ -67,12 +67,20 @@
     <Compile Include="Migrations\201812211100451_CreateDelivery.Designer.cs">
       <DependentUpon>201812211100451_CreateDelivery.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812211256515_CreateEmployee.cs" />
+    <Compile Include="Migrations\201812211256515_CreateEmployee.Designer.cs">
+      <DependentUpon>201812211256515_CreateEmployee.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Client.cs" />
     <Compile Include="Models\Delivery.cs" />
+    <Compile Include="Models\Departments.cs" />
+    <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\Invoice.cs" />
     <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\Person.cs" />
     <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\Sexe.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VenPieceDbContext.cs" />
   </ItemGroup>
@@ -99,6 +107,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812211100451_CreateDelivery.resx">
       <DependentUpon>201812211100451_CreateDelivery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812211256515_CreateEmployee.resx">
+      <DependentUpon>201812211256515_CreateEmployee.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

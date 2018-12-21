@@ -15,5 +15,6 @@ namespace DAL.VenPiece
         public DbSet<Product> Products { get; set; }
         public DbSet<Invoice> Invoices { get; set; }
         public DbSet<Delivery> Deliverys { get; set; }
+        public DbSet<Employee> Employees { get; set; }
     }
 }

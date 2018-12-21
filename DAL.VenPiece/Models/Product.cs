@@ -10,8 +10,8 @@ namespace DAL.VenPiece.Models
     {
         public Guid ProductId { get; set; }
         public String Designation { get; set; }
-        public int price { get; set; }
-        public int quantity { get; set; }
+        public int Price { get; set; }
+        public int Quantity { get; set; }
         public Boolean OutOfStock { get; set; }
     }
 }

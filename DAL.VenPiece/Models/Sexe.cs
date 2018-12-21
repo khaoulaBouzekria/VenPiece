@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace DAL.VenPiece.Models
 {
-    public class Order
+    public enum Sexe
     {
-        public Guid OrderId { get; set; }
-        public DateTime Date { get; set; }
-        public String State { get; set; }
+        Male,
+        Female
     }
 }

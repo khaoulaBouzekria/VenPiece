@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace DAL.VenPiece.Models
 {
-    public class Order
+    public enum Departments
     {
-        public Guid OrderId { get; set; }
-        public DateTime Date { get; set; }
-        public String State { get; set; }
+        Sales,
+        Preparation,
+        Accounting,
+        Store
     }
 }
