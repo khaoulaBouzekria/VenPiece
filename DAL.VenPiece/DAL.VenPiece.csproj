@@ -51,8 +51,28 @@
     <Compile Include="Migrations\201812202035478_CreateClient.Designer.cs">
       <DependentUpon>201812202035478_CreateClient.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812211054350_CreateOrder.cs" />
+    <Compile Include="Migrations\201812211054350_CreateOrder.Designer.cs">
+      <DependentUpon>201812211054350_CreateOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812211055431_CreateProduct.cs" />
+    <Compile Include="Migrations\201812211055431_CreateProduct.Designer.cs">
+      <DependentUpon>201812211055431_CreateProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812211056211_CreateInvoice.cs" />
+    <Compile Include="Migrations\201812211056211_CreateInvoice.Designer.cs">
+      <DependentUpon>201812211056211_CreateInvoice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812211100451_CreateDelivery.cs" />
+    <Compile Include="Migrations\201812211100451_CreateDelivery.Designer.cs">
+      <DependentUpon>201812211100451_CreateDelivery.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Client.cs" />
+    <Compile Include="Models\Delivery.cs" />
+    <Compile Include="Models\Invoice.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VenPieceDbContext.cs" />
   </ItemGroup>
@@ -67,6 +87,18 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201812202035478_CreateClient.resx">
       <DependentUpon>201812202035478_CreateClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812211054350_CreateOrder.resx">
+      <DependentUpon>201812211054350_CreateOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812211055431_CreateProduct.resx">
+      <DependentUpon>201812211055431_CreateProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812211056211_CreateInvoice.resx">
+      <DependentUpon>201812211056211_CreateInvoice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812211100451_CreateDelivery.resx">
+      <DependentUpon>201812211100451_CreateDelivery.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
