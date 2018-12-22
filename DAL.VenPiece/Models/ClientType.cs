@@ -7,11 +7,13 @@ using System.Threading.Tasks;
 namespace DAL.VenPiece.Models
 {
     /// <summary>
-    /// sexe enumeration 
+    /// Client types : mecanic, wholesaler,
+    /// automobile manufacturer
     /// </summary>
-    public enum Sexe
+    public enum ClientType
     {
-        Male,
-        Female
+        Mecanic,
+        Wholesaler,
+        AutomobileManufacturer
     }
 }
