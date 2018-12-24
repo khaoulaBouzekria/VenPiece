@@ -1,5 +1,5 @@
 ﻿
-namespace DAL.VenPiece.Models
+namespace VenPiece.Desktop.Models
 {
     /// <summary>
     /// sexe enumeration 

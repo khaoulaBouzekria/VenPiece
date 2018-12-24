@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DAL.VenPiece.Models
+namespace VenPiece.Desktop.Models
 {
     /// <summary>
     /// A class that represents the Client model
