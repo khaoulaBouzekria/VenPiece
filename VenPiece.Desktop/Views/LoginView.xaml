@@ -17,12 +17,6 @@
         </Grid.RowDefinitions> 
         
         <StackPanel Grid.Row="1" Orientation="Horizontal" Height="126" VerticalAlignment="Bottom">
-            <Label Content="User Name" 
-                   HorizontalAlignment="Stretch"
-                   Height="Auto"
-                   Margin="200,100,0,0" 
-                   Width="70"
-                   />
             <TextBox HorizontalAlignment="Stretch"
                      Height="Auto" 
                      Margin="0,100,0,0" 
@@ -31,11 +25,6 @@
           
         </StackPanel>
         <StackPanel Grid.Row="2" Orientation="Horizontal">
-                <Label Content="Password" 
-                   HorizontalAlignment="Stretch"
-                   Height="auto"
-                   Margin="200,100,0,0" 
-                   Width="70"/>
             <PasswordBox HorizontalAlignment="Stretch"
                      Height="Auto" 
                      Margin="0,100,0,0" 
