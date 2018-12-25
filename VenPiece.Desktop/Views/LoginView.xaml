@@ -5,8 +5,50 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:VenPiece.Desktop.Views"
         mc:Ignorable="d"
-        Title="LoginView" Height="450" Width="800">
+        Title="Login" Height="450" Width="711.5">
     <Grid>
+   
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions> 
         
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Height="126" VerticalAlignment="Bottom">
+            <Label Content="User Name" 
+                   HorizontalAlignment="Stretch"
+                   Height="Auto"
+                   Margin="200,100,0,0" 
+                   Width="70"
+                   />
+            <TextBox HorizontalAlignment="Stretch"
+                     Height="Auto" 
+                     Margin="0,100,0,0" 
+                     Width="175" Background="{x:Null}"
+                     />
+          
+        </StackPanel>
+        <StackPanel Grid.Row="2" Orientation="Horizontal">
+                <Label Content="Password" 
+                   HorizontalAlignment="Stretch"
+                   Height="auto"
+                   Margin="200,100,0,0" 
+                   Width="70"/>
+            <PasswordBox HorizontalAlignment="Stretch"
+                     Height="Auto" 
+                     Margin="0,100,0,0" 
+                     Width="175" Background="{x:Null}"
+                     />
+            </StackPanel>
+        <Button Name="Login"
+                Content="Login" 
+                HorizontalAlignment="Stretch"
+                Height="30" Margin="300,75" 
+                Grid.Row="3" 
+                Width="75" Background="{x:Null}"
+                Click="Login_Click"/>
     </Grid>
 </Window>
+

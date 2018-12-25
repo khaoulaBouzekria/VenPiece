@@ -22,6 +22,12 @@ namespace VenPiece.Desktop.Views
         public LoginView()
         {
             InitializeComponent();
+            
+
+        }
+        private void Login_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
