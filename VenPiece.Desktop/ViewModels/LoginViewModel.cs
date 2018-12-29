@@ -9,5 +9,8 @@ namespace VenPiece.Desktop.ViewModels
 {
     public class LoginViewModel : Screen
     {
+        VenPieceDbContext db = new VenPieceDbContext();
+        
+
     }
 }
