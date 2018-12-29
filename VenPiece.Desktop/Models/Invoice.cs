@@ -1,4 +1,6 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace VenPiece.Desktop.Models
 {
@@ -10,6 +12,7 @@ namespace VenPiece.Desktop.Models
         /// <summary>
         /// Invoice identifier
         /// </summary>
+        [Key, ForeignKey("Order")]
         public Guid InvoiceId { get; set; }
         /// <summary>
         /// Invoice date
@@ -19,5 +22,7 @@ namespace VenPiece.Desktop.Models
         /// Invoice payement deadline
         /// </summary>
         public DateTime PayementDeadline { get; set; }
+        public virtual Order Order { get; set; }
+
     }
 }

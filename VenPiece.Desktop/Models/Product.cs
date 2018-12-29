@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace VenPiece.Desktop.Models
 {
@@ -24,8 +25,14 @@ namespace VenPiece.Desktop.Models
         /// </summary>
         public int Quantity { get; set; }
         /// <summary>
-        /// The product is it out of stock !
+        /// Product description
         /// </summary>
-        public Boolean OutOfStock { get; set; }
+        public string Description { get; set; }
+        public virtual ICollection<OrderItem> OrderItems { get; set; }
+
+        public Product()
+        {
+            this.OrderItems = new HashSet<OrderItem>();
+        }
     }
 }

@@ -111,7 +111,41 @@
     <Compile Include="Migrations\201812232045336_CreateEmployees.Designer.cs">
       <DependentUpon>201812232045336_CreateEmployees.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812291610005_UpdateClient.cs" />
+    <Compile Include="Migrations\201812291610005_UpdateClient.Designer.cs">
+      <DependentUpon>201812291610005_UpdateClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812291846068_CreateOrderItems.cs" />
+    <Compile Include="Migrations\201812291846068_CreateOrderItems.Designer.cs">
+      <DependentUpon>201812291846068_CreateOrderItems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812291847289_CreateDeliveryItems.cs" />
+    <Compile Include="Migrations\201812291847289_CreateDeliveryItems.Designer.cs">
+      <DependentUpon>201812291847289_CreateDeliveryItems.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812291848300_UpdateDeliveries.cs" />
+    <Compile Include="Migrations\201812291848300_UpdateDeliveries.Designer.cs">
+      <DependentUpon>201812291848300_UpdateDeliveries.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812291849033_UpdateOrders.cs" />
+    <Compile Include="Migrations\201812291849033_UpdateOrders.Designer.cs">
+      <DependentUpon>201812291849033_UpdateOrders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812291851197_UpdateProducts.cs" />
+    <Compile Include="Migrations\201812291851197_UpdateProducts.Designer.cs">
+      <DependentUpon>201812291851197_UpdateProducts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812292046267_UpdateInvoices.cs" />
+    <Compile Include="Migrations\201812292046267_UpdateInvoices.Designer.cs">
+      <DependentUpon>201812292046267_UpdateInvoices.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812292047008_UpdateInvoicesOrders.cs" />
+    <Compile Include="Migrations\201812292047008_UpdateInvoicesOrders.Designer.cs">
+      <DependentUpon>201812292047008_UpdateInvoicesOrders.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\DeliveryItem.cs" />
+    <Compile Include="Models\OrderItem.cs" />
     <Compile Include="VenPieceDbContext.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="Views\LoginView.xaml.cs">
@@ -160,6 +194,30 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812232045336_CreateEmployees.resx">
       <DependentUpon>201812232045336_CreateEmployees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812291610005_UpdateClient.resx">
+      <DependentUpon>201812291610005_UpdateClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812291846068_CreateOrderItems.resx">
+      <DependentUpon>201812291846068_CreateOrderItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812291847289_CreateDeliveryItems.resx">
+      <DependentUpon>201812291847289_CreateDeliveryItems.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812291848300_UpdateDeliveries.resx">
+      <DependentUpon>201812291848300_UpdateDeliveries.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812291849033_UpdateOrders.resx">
+      <DependentUpon>201812291849033_UpdateOrders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812291851197_UpdateProducts.resx">
+      <DependentUpon>201812291851197_UpdateProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812292046267_UpdateInvoices.resx">
+      <DependentUpon>201812292046267_UpdateInvoices.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812292047008_UpdateInvoicesOrders.resx">
+      <DependentUpon>201812292047008_UpdateInvoicesOrders.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
