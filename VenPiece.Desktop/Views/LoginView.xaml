@@ -7,7 +7,7 @@
         xmlns:local="clr-namespace:VenPiece.Desktop.Views"
         mc:Ignorable="d"
         Title="Login" 
-        Icon="../Media/VenPiece.png"
+        Icon="../Media/LogoIcon 2.png"
         Height="435" Width="650"
         ShowIconOnTitleBar="True">
     <Grid>
@@ -71,13 +71,13 @@
                     <DropShadowEffect/>
                 </Button.Effect>
             </Button>
-            <Image x:Name="Logo1"
+            <Image x:Name="UserIcon"
                    HorizontalAlignment="Stretch"
                    Height="83"
                    Margin="96,24,96,0"
                    Grid.RowSpan="2" 
                    VerticalAlignment="Top"
-                   Source="../Media/666201 (1).png"
+                   Source="../Media/User icon.png"
                    
                   />
         </Grid>

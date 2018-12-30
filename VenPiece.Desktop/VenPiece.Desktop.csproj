@@ -188,16 +188,13 @@
     <Resource Include="Media\LogoIcon.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Media\icons8-mot-de-passe-1-100.png" />
+    <Resource Include="Media\User icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Media\666201 %281%29.png" />
+    <Resource Include="Media\Background Image.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Media\thumbnail_large-1.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Media\VenPiece.png" />
+    <Resource Include="Media\LogoIcon 2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
