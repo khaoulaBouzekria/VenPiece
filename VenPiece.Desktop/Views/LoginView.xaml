@@ -8,79 +8,38 @@
         mc:Ignorable="d"
         Title="Login" 
         Icon="../Media/LogoIcon 2.png"
-        Height="435" Width="650"
-        ShowIconOnTitleBar="True">
+        Height="300" Width="400"
+        ShowIconOnTitleBar="True"
+        EnableDWMDropShadow="True">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="64*"/>
-            <ColumnDefinition Width="45*"/>
-            <ColumnDefinition Width="64*"/>
-        </Grid.ColumnDefinitions>
-        <Border BorderThickness="145,1" CornerRadius="50" Grid.ColumnSpan="3" Background="#bd0f66">
-        </Border>
-
-        <Grid Background="#bd0f66" Grid.ColumnSpan="3" Margin="171,10,171,9" >
-
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto" MinHeight="177"/>
-                <RowDefinition Height="Auto" MinHeight="3"/>
-            </Grid.RowDefinitions>
-            <Image Name="Logo" Margin="0,0,0,189" Grid.RowSpan="2" />
-            <StackPanel Grid.Row="1" Orientation="Horizontal" Height="126" VerticalAlignment="Bottom">
-                <TextBox HorizontalAlignment="Stretch"
+        <TextBox Height="Auto" 
+                 Margin="100,50,100,190" 
+                 Background="{x:Null}"
+                TextChanged="TextBox_TextChanged"
+                 Controls:TextBoxHelper.Watermark="User Name">
+            <TextBox.Effect>
+                <DropShadowEffect/>
+            </TextBox.Effect>
+        </TextBox>
+        <PasswordBox HorizontalAlignment="Stretch"
                      Height="Auto" 
-                     Margin="60,100,0,0" 
-                     Width="175" Background="{x:Null}"
-                     TextChanged="TextBox_TextChanged"
-                     Controls:TextBoxHelper.Watermark="User Name"
-                         >
-                    <TextBox.Effect>
-                        <DropShadowEffect/>
-                    </TextBox.Effect>
-                </TextBox>
-
-            </StackPanel>
-            <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0,126,0,0" Grid.RowSpan="2">
-
-                <PasswordBox HorizontalAlignment="Stretch"
-                     Height="Auto" 
-                     Margin="60,100,0,0" 
-                     Width="175" Background="{x:Null}"
-                     Grid.Column="1"
-                     Controls:TextBoxHelper.Watermark="Password"
-                     Controls:ControlsHelper.CornerRadius="10"
-                             >
-                    <PasswordBox.Effect>
-                        <DropShadowEffect/>
-                    </PasswordBox.Effect>
-                </PasswordBox>
-
-
-            </StackPanel>
-            <Button Name="Login"
+                     Margin="100,120" 
+                     Background="{x:Null}"
+                     Controls:TextBoxHelper.Watermark="Password">
+            <PasswordBox.Effect>
+                <DropShadowEffect/>
+            </PasswordBox.Effect>
+        </PasswordBox>
+        <Button Name="Login"
                 Content="Login" 
-                HorizontalAlignment="Stretch" Margin="112,75" 
-                Grid.Row="3" Background="{x:Null}"
+                Margin="150,210,150,30" 
+                Background="{x:Null}"
                 Click="Login_Click"
-                Controls:ButtonHelper.CornerRadius="10" Cursor="Hand"
-                >
-                <Button.Effect>
-                    <DropShadowEffect/>
-                </Button.Effect>
-            </Button>
-            <Image x:Name="UserIcon"
-                   HorizontalAlignment="Stretch"
-                   Height="83"
-                   Margin="96,24,96,0"
-                   Grid.RowSpan="2" 
-                   VerticalAlignment="Top"
-                   Source="../Media/User icon.png"
-                   
-                  />
-        </Grid>
+                Controls:ButtonHelper.CornerRadius="10" Cursor="Hand">
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
     </Grid>
 </Controls:MetroWindow>
 
