@@ -5,37 +5,61 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:local="clr-namespace:VenPiece.Desktop.Views"
+        xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
         mc:Ignorable="d"
         Title="Login" 
         Icon="../Media/LogoIcon 2.png"
-        Height="300" Width="400"
+        Height="400" Width="400"
         ShowIconOnTitleBar="True"
-        EnableDWMDropShadow="True">
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        GlowBrush="Black"
+        BorderThickness="0"
+        >
     <Grid>
-        <TextBox Height="Auto" 
-                 Margin="100,50,100,190" 
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <TextBox Height="30" 
+                  
                  Background="{x:Null}"
-                TextChanged="TextBox_TextChanged"
-                 Controls:TextBoxHelper.Watermark="User Name">
+                 TextChanged="TextBox_TextChanged"
+                 Controls:TextBoxHelper.Watermark="User Name"
+                 Grid.Row="1"
+                 Grid.Column="1">
             <TextBox.Effect>
                 <DropShadowEffect/>
             </TextBox.Effect>
         </TextBox>
         <PasswordBox HorizontalAlignment="Stretch"
-                     Height="Auto" 
-                     Margin="100,120" 
+                     Height="30" 
                      Background="{x:Null}"
-                     Controls:TextBoxHelper.Watermark="Password">
+                     Controls:TextBoxHelper.Watermark="Password" 
+                     Grid.Row="2"
+                     Grid.Column="1">
             <PasswordBox.Effect>
                 <DropShadowEffect/>
             </PasswordBox.Effect>
         </PasswordBox>
         <Button Name="Login"
                 Content="Login" 
-                Margin="150,210,150,30" 
+                Height="10"
+                Width="70"
                 Background="{x:Null}"
                 Click="Login_Click"
-                Controls:ButtonHelper.CornerRadius="10" Cursor="Hand">
+                Controls:ButtonHelper.CornerRadius="10"
+                Cursor="Hand"
+                Grid.Row="3"
+                Grid.Column="1" 
+                HorizontalAlignment="Center" >
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
