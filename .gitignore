@@ -259,3 +259,8 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+
+# Others
+.vs/
+.vs/*
+.vs/VenPiece/v15/.suo
