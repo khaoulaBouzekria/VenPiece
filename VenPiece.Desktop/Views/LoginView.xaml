@@ -34,7 +34,8 @@
                  TextChanged="TextBox_TextChanged"
                  Controls:TextBoxHelper.Watermark="User Name"
                  Grid.Row="1"
-                 Grid.Column="1">
+                 Grid.Column="1"
+                 VerticalContentAlignment="Center">
             <TextBox.Effect>
                 <DropShadowEffect/>
             </TextBox.Effect>
@@ -42,17 +43,18 @@
         <PasswordBox HorizontalAlignment="Stretch"
                      Height="30" 
                      Background="{x:Null}"
-                     Controls:TextBoxHelper.Watermark="Password" 
+                     Controls:TextBoxHelper.Watermark="Password"
                      Grid.Row="2"
-                     Grid.Column="1">
+                     Grid.Column="1"
+                     VerticalContentAlignment="Center">
             <PasswordBox.Effect>
                 <DropShadowEffect/>
             </PasswordBox.Effect>
         </PasswordBox>
         <Button Name="Login"
                 Content="Login" 
-                Height="10"
-                Width="70"
+                Height="30"
+                Width="100"
                 Background="{x:Null}"
                 Click="Login_Click"
                 Controls:ButtonHelper.CornerRadius="10"
