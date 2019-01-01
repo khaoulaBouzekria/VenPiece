@@ -5,63 +5,67 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:local="clr-namespace:VenPiece.Desktop.Views"
+        xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
         mc:Ignorable="d"
         Title="Login" 
-        Icon="../Media/LogoIcon.ico"
-        Height="450" Width="711.5"
-        ShowIconOnTitleBar="True">
-
+        Icon="../Media/LogoIcon 2.png"
+        Height="400" Width="400"
+        ShowIconOnTitleBar="True"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        GlowBrush="Black"
+        BorderThickness="0"
+        >
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="101*"/>
-            <ColumnDefinition Width="40*"/>
-        </Grid.ColumnDefinitions>
-
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-
-        <StackPanel Grid.Row="1" Orientation="Horizontal" Height="126" VerticalAlignment="Bottom" Grid.ColumnSpan="2" Margin="0,0,-0.2,0.4">
-            <Label Content="User Name" 
-                   HorizontalAlignment="Stretch"
-                   Height="Auto"
-                   Margin="200,100,0,0" 
-                   Width="70"
-                   Foreground="Bisque"
-                   />
-            <TextBox HorizontalAlignment="Stretch"
-                     Height="Auto" 
-                     Margin="0,100,0,0" 
-                     Width="175" Background="{x:Null}"
-                     />
-
-        </StackPanel>
-        <StackPanel Grid.Row="1" Orientation="Horizontal" Grid.ColumnSpan="2" Margin="0,126,-0.2,0" Grid.RowSpan="2">
-            <Label Content="Password" 
-                   HorizontalAlignment="Stretch"
-                   Height="auto"
-                   Margin="200,100,0,0" 
-                   Width="70"
-                   Foreground="Bisque"/>
-            <PasswordBox HorizontalAlignment="Stretch"
-                     Height="Auto" 
-                     Margin="0,100,0,0" 
-                     Width="175" Background="{x:Null}"
-                     />
-        </StackPanel>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <TextBox Height="30" 
+                  
+                 Background="{x:Null}"
+                 TextChanged="TextBox_TextChanged"
+                 Controls:TextBoxHelper.Watermark="User Name"
+                 Grid.Row="1"
+                 Grid.Column="1"
+                 VerticalContentAlignment="Center">
+            <TextBox.Effect>
+                <DropShadowEffect/>
+            </TextBox.Effect>
+        </TextBox>
+        <PasswordBox HorizontalAlignment="Stretch"
+                     Height="30" 
+                     Background="{x:Null}"
+                     Controls:TextBoxHelper.Watermark="Password"
+                     Grid.Row="2"
+                     Grid.Column="1"
+                     VerticalContentAlignment="Center">
+            <PasswordBox.Effect>
+                <DropShadowEffect/>
+            </PasswordBox.Effect>
+        </PasswordBox>
         <Button Name="Login"
                 Content="Login" 
-                HorizontalAlignment="Stretch"
-                Height="30" Margin="315,75,114.594,75" 
-                Grid.Row="3" 
-                Width="75" Background="{x:Null}"
+                Height="30"
+                Width="100"
+                Background="{x:Null}"
                 Click="Login_Click"
-                
-                />
+                Controls:ButtonHelper.CornerRadius="10"
+                Cursor="Hand"
+                Grid.Row="3"
+                Grid.Column="1" 
+                HorizontalAlignment="Center" >
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
     </Grid>
 </Controls:MetroWindow>
 
