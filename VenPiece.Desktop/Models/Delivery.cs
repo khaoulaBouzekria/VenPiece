@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace VenPiece.Desktop.Models
 {
@@ -22,7 +23,17 @@ namespace VenPiece.Desktop.Models
         /// <summary>
         /// Number of packages in a delivery
         /// </summary>
-        public int NumberOfPackages {get; set;}
+        public int NumberOfPackages { get; set; }
+        public Guid OrderId { get; set; }
+
+        public virtual Order Order { get; set; }
+
+        public virtual ICollection<DeliveryItem> DeliveryItems { get; set; }
+
+        public Delivery()
+        {
+            this.DeliveryItems = new HashSet<DeliveryItem>();
+        }
 
     }
 }

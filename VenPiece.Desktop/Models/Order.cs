@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace VenPiece.Desktop.Models
 {
@@ -14,10 +16,35 @@ namespace VenPiece.Desktop.Models
         /// <summary>
         /// Order date
         /// </summary>
-        public DateTime Date { get; set; }
+        public DateTime OrderDate { get; set; }
         /// <summary>
         /// Order state 
         /// </summary>
         public String State { get; set; }
+        /// <summary>
+        /// Total of Items
+        /// </summary>
+        public decimal ItemsTotal { get; set; }
+        /// <summary>
+        /// Represents the phone number to call on an order
+        /// </summary>
+        public string Phone { get; set; }
+        /// <summary>
+        /// Represents the client that launched the order
+        /// </summary>
+        public Guid ClientId { get; set; }
+
+        public virtual Client Client { get; set; }
+
+        public virtual Invoice Invoice { get; set; }
+        /// <summary>
+        /// Represents the items being ordered
+        /// </summary>
+        public virtual ICollection<OrderItem> OrderItems { get; set; }
+        
+        public Order()
+        {
+            OrderItems = new HashSet<OrderItem>();
+        }
     }
 }

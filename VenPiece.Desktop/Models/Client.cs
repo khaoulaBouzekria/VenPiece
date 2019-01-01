@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace VenPiece.Desktop.Models
 {
@@ -23,5 +24,38 @@ namespace VenPiece.Desktop.Models
         /// Client type
         /// </summary>
         public ClientType Type { get; set; }
+        /// <summary>
+        /// Client Phone Number
+        /// </summary>
+        public string Phone { get; set; }
+        /// <summary>
+        /// Represents the client email address
+        /// </summary>
+        public string Email { get; set; }
+        /// <summary>
+        /// Represents the client street address
+        /// </summary>
+        public string Street { get; set; }
+        /// <summary>
+        /// Represents the client's city
+        /// </summary>
+        public string City { get; set; }
+        /// <summary>
+        /// Represents the client's country
+        /// </summary>
+        public string Country { get; set; }
+        /// <summary>
+        /// Represents the ZIP CODE for the client's address
+        /// </summary>
+        public string Zip { get; set; }
+        /// <summary>
+        /// Represents the list of orders that the client made
+        /// </summary>
+        public virtual ICollection<Order> Orders { get; set; }
+
+        public Client()
+        {
+            this.Orders = new HashSet<Order>();
+        }
     }
 }
