@@ -29,9 +29,8 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <TextBox Height="30" 
-                  
+                 Name="UsernameTextBox" 
                  Background="{x:Null}"
-                 TextChanged="TextBox_TextChanged"
                  Controls:TextBoxHelper.Watermark="User Name"
                  Grid.Row="1"
                  Grid.Column="1"
@@ -41,6 +40,7 @@
             </TextBox.Effect>
         </TextBox>
         <PasswordBox HorizontalAlignment="Stretch"
+                     Name="PasswordBox"
                      Height="30" 
                      Background="{x:Null}"
                      Controls:TextBoxHelper.Watermark="Password"
@@ -51,12 +51,12 @@
                 <DropShadowEffect/>
             </PasswordBox.Effect>
         </PasswordBox>
-        <Button Name="Login"
+        <Button Name="LoginButton"
                 Content="Login" 
                 Height="30"
                 Width="100"
                 Background="{x:Null}"
-                Click="Login_Click"
+                Click="LoginButton_Click"
                 Controls:ButtonHelper.CornerRadius="10"
                 Cursor="Hand"
                 Grid.Row="3"

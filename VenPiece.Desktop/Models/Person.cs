@@ -26,7 +26,7 @@ namespace VenPiece.Desktop.Models
         /// <summary>
         /// Person sexe
         /// </summary>
-        public Sexe Sexe { get; set; }
+        public Gender Gender { get; set; }
 
     }
 }

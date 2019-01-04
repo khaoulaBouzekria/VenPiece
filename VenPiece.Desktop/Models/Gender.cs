@@ -4,7 +4,7 @@ namespace VenPiece.Desktop.Models
     /// <summary>
     /// sexe enumeration 
     /// </summary>
-    public enum Sexe
+    public enum Gender
     {
         Male,
         Female

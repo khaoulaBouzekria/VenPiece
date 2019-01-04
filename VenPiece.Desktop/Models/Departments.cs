@@ -9,6 +9,8 @@ namespace VenPiece.Desktop.Models
         Sales,
         Preparation,
         Accounting,
-        Store
+        Store,
+        Administration,
+        IT
     }
 }
