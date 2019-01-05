@@ -21,9 +21,12 @@ namespace VenPiece.Desktop
             AppDomain.CurrentDomain.SetThreadPrincipal(customPrincipal);
             //DisplayRootViewFor<LoginViewModel>();
             //Show the login view
-            AuthenticationViewModel viewModel = new AuthenticationViewModel(new AuthenticationService());
-            IView loginWindow = new LoginWindow(viewModel);
-            loginWindow.Show();
+            //AuthenticationViewModel viewModel = new AuthenticationViewModel(new AuthenticationService());
+            //IView loginWindow = new LoginWindow(viewModel);
+            //loginWindow.Show();
+            LoginViewModel viewModel = new LoginViewModel(new AuthenticationService());
+            IView loginView = new LoginView(viewModel);
+            loginView.Show();
         }
     }
 }

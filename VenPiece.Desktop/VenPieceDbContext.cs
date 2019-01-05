@@ -1,5 +1,6 @@
 ﻿using System.Data.Entity;
 using VenPiece.Desktop.Models;
+using VenPiece.Desktop.Services;
 
 namespace VenPiece.Desktop
 {

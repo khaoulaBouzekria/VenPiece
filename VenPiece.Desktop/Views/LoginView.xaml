@@ -16,20 +16,27 @@
         GlowBrush="Black"
         BorderThickness="0"
         >
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+    </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
+        <TextBlock Text="{Binding AuthenticatedUser}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+                   FontSize="14" HorizontalAlignment="Right" TextWrapping="Wrap" FontWeight="Bold"
+                   Margin="2,2,2,2"/>
         <TextBox Height="30" 
-                 Name="UsernameTextBox" 
+                 Text="{Binding Username}"
                  Background="{x:Null}"
                  Controls:TextBoxHelper.Watermark="User Name"
                  Grid.Row="1"
@@ -52,20 +59,23 @@
             </PasswordBox.Effect>
         </PasswordBox>
         <Button Name="LoginButton"
-                Content="Login" 
+                Content="Log in" 
                 Height="30"
                 Width="100"
                 Background="{x:Null}"
-                Click="LoginButton_Click"
                 Controls:ButtonHelper.CornerRadius="10"
                 Cursor="Hand"
                 Grid.Row="3"
                 Grid.Column="1" 
-                HorizontalAlignment="Center" >
+                HorizontalAlignment="Center"
+                Command="{Binding LoginCommand, Mode=OneTime, Converter={StaticResource DoNothingConverter}}"
+                CommandParameter="{Binding ElementName=PasswordBox}">
             <Button.Effect>
                 <DropShadowEffect/>
             </Button.Effect>
         </Button>
+        <TextBlock Text="{Binding Status}" Grid.Row="4" Grid.Column="1"
+                   HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Red" TextWrapping="Wrap" />
     </Grid>
 </Controls:MetroWindow>
 

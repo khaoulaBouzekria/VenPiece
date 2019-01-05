@@ -15,17 +15,7 @@ using VenPiece.Desktop.ViewModels;
 
 namespace VenPiece.Desktop.Views
 {
-    public interface IView
-    {
-        IViewModel ViewModel
-        {
-            get;
-            set;
-        }
-
-        void Show();
-    }
-
+    
     /// <summary>
     /// Interaction logic for LoginWindow.xaml
     /// </summary>

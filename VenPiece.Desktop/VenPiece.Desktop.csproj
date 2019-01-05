@@ -54,6 +54,9 @@
     <Reference Include="MahApps.Metro, Version=1.6.5.1, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MahApps.Metro.1.6.5\lib\net46\MahApps.Metro.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
@@ -87,6 +90,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Converters\DoNothingConverter.cs" />
     <Compile Include="Migrations\201812232041032_CreateClients.cs" />
     <Compile Include="Migrations\201812232041032_CreateClients.Designer.cs">
       <DependentUpon>201812232041032_CreateClients.cs</DependentUpon>
@@ -147,10 +151,29 @@
     <Compile Include="Migrations\201901012100372_UpdateEmployees.Designer.cs">
       <DependentUpon>201901012100372_UpdateEmployees.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201901051125272_CreateUsers.cs" />
+    <Compile Include="Migrations\201901051125272_CreateUsers.Designer.cs">
+      <DependentUpon>201901051125272_CreateUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901051449047_UpdateUsers.cs" />
+    <Compile Include="Migrations\201901051449047_UpdateUsers.Designer.cs">
+      <DependentUpon>201901051449047_UpdateUsers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DeliveryItem.cs" />
+    <Compile Include="Models\InternalUserData.cs" />
     <Compile Include="Models\OrderItem.cs" />
     <Compile Include="Models\User.cs" />
+    <Compile Include="Repository\IClientRepository.cs" />
+    <Compile Include="Repository\IDeliveryRepository.cs" />
+    <Compile Include="Repository\IEmployeeRepository.cs" />
+    <Compile Include="Repository\IInvoiceRepository.cs" />
+    <Compile Include="Repository\IOrderRepository.cs" />
+    <Compile Include="Repository\IProductRepository.cs" />
+    <Compile Include="Repository\IRepository.cs" />
+    <Compile Include="Repository\IUserRepository.cs" />
+    <Compile Include="Repository\Repository.cs" />
+    <Compile Include="Repository\UserRepository.cs" />
     <Compile Include="Security\AnonymousIdentity.cs" />
     <Compile Include="Security\CustomIdentity.cs" />
     <Compile Include="Security\CustomPrincipal.cs" />
@@ -244,6 +267,12 @@
     <EmbeddedResource Include="Migrations\201901012100372_UpdateEmployees.resx">
       <DependentUpon>201901012100372_UpdateEmployees.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901051125272_CreateUsers.resx">
+      <DependentUpon>201901051125272_CreateUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901051449047_UpdateUsers.resx">
+      <DependentUpon>201901051449047_UpdateUsers.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -305,6 +334,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Entypo-license.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="UnitOfWork\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
