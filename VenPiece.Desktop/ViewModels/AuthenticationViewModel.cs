@@ -1,8 +1,8 @@
 ﻿using System;
 using System.ComponentModel;
-using System.Security;
 using System.Threading;
 using System.Windows.Controls;
+using System.Security;
 using VenPiece.Desktop.Models;
 using VenPiece.Desktop.Security;
 using VenPiece.Desktop.Services;
@@ -10,7 +10,7 @@ using VenPiece.Desktop.Views;
 
 namespace VenPiece.Desktop.ViewModels
 {
-    public class LoginViewModel : IViewModel, INotifyPropertyChanged
+    public class AuthenticationViewModel : IViewModel, INotifyPropertyChanged
     {
         private readonly IAuthenticationService _authenticationService;
         private readonly DelegateCommand _loginCommand;
@@ -19,7 +19,7 @@ namespace VenPiece.Desktop.ViewModels
         private string _username;
         private string _status;
 
-        public LoginViewModel(IAuthenticationService authenticationService)
+        public AuthenticationViewModel(IAuthenticationService authenticationService)
         {
             _authenticationService = authenticationService;
             _loginCommand = new DelegateCommand(Login, CanLogin);
@@ -40,7 +40,7 @@ namespace VenPiece.Desktop.ViewModels
             {
                 if (IsAuthenticated)
                     return
-                        $"Welcome {Thread.CurrentPrincipal.Identity.Name}. {(Thread.CurrentPrincipal.IsInRole("Administrators") ? "- Admin" : "Not an Admin")}";
+                        $"Signed in as {Thread.CurrentPrincipal.Identity.Name}. {(Thread.CurrentPrincipal.IsInRole("Administrators") ? "You are an administrator!" : "You are NOT a member of the administrators group.")}";
 
                 return "Not authenticated!";
             }
@@ -151,6 +151,5 @@ namespace VenPiece.Desktop.ViewModels
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
         #endregion
-
     }
 }

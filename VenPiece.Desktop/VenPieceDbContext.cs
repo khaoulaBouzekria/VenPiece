@@ -1,5 +1,6 @@
 ﻿using System.Data.Entity;
 using VenPiece.Desktop.Models;
+using VenPiece.Desktop.Services;
 
 namespace VenPiece.Desktop
 {
@@ -16,5 +17,6 @@ namespace VenPiece.Desktop
         public DbSet<Delivery> Deliveries { get; set; }
         public DbSet<DeliveryItem> DeliveryItems { get; set; }
         public DbSet<Employee> Employees { get; set; }
+        public  DbSet<InternalUserData> Users { get; set; }
     }
 }

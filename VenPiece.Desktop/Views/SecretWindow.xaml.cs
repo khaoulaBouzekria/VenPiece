@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Permissions;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -11,38 +12,30 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using MahApps.Metro.Controls;
 using VenPiece.Desktop.ViewModels;
 
 namespace VenPiece.Desktop.Views
 {
-    public interface IView
-    {
-        IViewModel ViewModel
-        {
-            get;
-            set;
-        }
-
-        void Show();
-    }
+    /// <inheritdoc />
     /// <summary>
-    /// Interaction logic for LoginView.xaml
+    /// Interaction logic for SecretWindow.xaml
     /// </summary>
-    public partial class LoginView : MetroWindow, IView
+    [PrincipalPermission(SecurityAction.Demand)]
+    public partial class SecretWindow : Window, IView
     {
-        public LoginView(IViewModel viewModel)
+        public SecretWindow()
         {
-            ViewModel = viewModel;
             InitializeComponent();
         }
 
         #region IView Members
+
         public IViewModel ViewModel
         {
             get => DataContext as IViewModel;
             set => DataContext = value;
         }
+
         #endregion
     }
 }

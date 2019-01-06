@@ -11,27 +11,17 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using MahApps.Metro.Controls;
 using VenPiece.Desktop.ViewModels;
 
 namespace VenPiece.Desktop.Views
 {
-    public interface IView
-    {
-        IViewModel ViewModel
-        {
-            get;
-            set;
-        }
-
-        void Show();
-    }
+    
     /// <summary>
-    /// Interaction logic for LoginView.xaml
+    /// Interaction logic for LoginWindow.xaml
     /// </summary>
-    public partial class LoginView : MetroWindow, IView
+    public partial class LoginWindow : Window, IView
     {
-        public LoginView(IViewModel viewModel)
+        public LoginWindow(IViewModel viewModel)
         {
             ViewModel = viewModel;
             InitializeComponent();

@@ -54,6 +54,9 @@
     <Reference Include="MahApps.Metro, Version=1.6.5.1, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MahApps.Metro.1.6.5\lib\net46\MahApps.Metro.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
@@ -87,6 +90,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Converters\DoNothingConverter.cs" />
     <Compile Include="Migrations\201812232041032_CreateClients.cs" />
     <Compile Include="Migrations\201812232041032_CreateClients.Designer.cs">
       <DependentUpon>201812232041032_CreateClients.cs</DependentUpon>
@@ -143,13 +147,62 @@
     <Compile Include="Migrations\201812292047008_UpdateInvoicesOrders.Designer.cs">
       <DependentUpon>201812292047008_UpdateInvoicesOrders.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201901012100372_UpdateEmployees.cs" />
+    <Compile Include="Migrations\201901012100372_UpdateEmployees.Designer.cs">
+      <DependentUpon>201901012100372_UpdateEmployees.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901051125272_CreateUsers.cs" />
+    <Compile Include="Migrations\201901051125272_CreateUsers.Designer.cs">
+      <DependentUpon>201901051125272_CreateUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901051449047_UpdateUsers.cs" />
+    <Compile Include="Migrations\201901051449047_UpdateUsers.Designer.cs">
+      <DependentUpon>201901051449047_UpdateUsers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DeliveryItem.cs" />
+    <Compile Include="Models\InternalUserData.cs" />
     <Compile Include="Models\OrderItem.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Repository\ClientRepository.cs" />
+    <Compile Include="Repository\DeliveryRepository.cs" />
+    <Compile Include="Repository\EmployeeRepository.cs" />
+    <Compile Include="Repository\IClientRepository.cs" />
+    <Compile Include="Repository\IDeliveryRepository.cs" />
+    <Compile Include="Repository\IEmployeeRepository.cs" />
+    <Compile Include="Repository\IInvoiceRepository.cs" />
+    <Compile Include="Repository\InvoiceRepository.cs" />
+    <Compile Include="Repository\IOrderRepository.cs" />
+    <Compile Include="Repository\IProductRepository.cs" />
+    <Compile Include="Repository\IRepository.cs" />
+    <Compile Include="Repository\IUserRepository.cs" />
+    <Compile Include="Repository\OrderRepository.cs" />
+    <Compile Include="Repository\ProductRepository.cs" />
+    <Compile Include="Repository\Repository.cs" />
+    <Compile Include="Repository\UserRepository.cs" />
+    <Compile Include="Security\AnonymousIdentity.cs" />
+    <Compile Include="Security\CustomIdentity.cs" />
+    <Compile Include="Security\CustomPrincipal.cs" />
+    <Compile Include="Security\DelegateCommand.cs" />
+    <Compile Include="Services\AuthenticationService.cs" />
+    <Compile Include="Services\IAuthenticationService.cs" />
+    <Compile Include="UnitOfWork\IUnitOfWork.cs" />
+    <Compile Include="UnitOfWork\UnitOfWork.cs" />
     <Compile Include="VenPieceDbContext.cs" />
+    <Compile Include="ViewModels\AuthenticationViewModel.cs" />
+    <Compile Include="ViewModels\IViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
+    <Compile Include="Views\AdminWindow.xaml.cs">
+      <DependentUpon>AdminWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\LoginView.xaml.cs">
       <DependentUpon>LoginView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LoginWindow.xaml.cs">
+      <DependentUpon>LoginWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SecretWindow.xaml.cs">
+      <DependentUpon>SecretWindow.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -163,7 +216,7 @@
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\Product.cs" />
-    <Compile Include="Models\Sexe.cs" />
+    <Compile Include="Models\Gender.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -219,6 +272,15 @@
     <EmbeddedResource Include="Migrations\201812292047008_UpdateInvoicesOrders.resx">
       <DependentUpon>201812292047008_UpdateInvoicesOrders.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901012100372_UpdateEmployees.resx">
+      <DependentUpon>201901012100372_UpdateEmployees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901051125272_CreateUsers.resx">
+      <DependentUpon>201901051125272_CreateUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901051449047_UpdateUsers.resx">
+      <DependentUpon>201901051449047_UpdateUsers.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -243,7 +305,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="Views\AdminWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\LoginView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LoginWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SecretWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -269,5 +343,6 @@
   <ItemGroup>
     <Resource Include="Resources\Entypo-license.txt" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
