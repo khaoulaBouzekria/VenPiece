@@ -1,0 +1,99 @@
+﻿<Controls:MetroWindow x:Class="VenPiece.Desktop.Views.MainView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VenPiece.Desktop.Views"
+        xmlns:viewModels="clr-namespace:VenPiece.Desktop.ViewModels"   
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        mc:Ignorable="d"
+        Title="MainView" Height="600" Width="600"
+        ShowIconOnTitleBar="True"
+        WindowStartupLocation="CenterScreen"
+        GlowBrush="Black"
+        BorderThickness="0"
+        >
+
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type viewModels:ClientListViewModel}">
+            <local:ClientListView></local:ClientListView>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModels:ProductListViewModel}">
+            <local:ProductListView></local:ProductListView>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModels:InvoiceListViewModel}">
+            <local:InvoiceListView></local:InvoiceListView>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModels:OrderListViewModel}">
+            <local:OrderListView></local:OrderListView>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModels:DeliveryListViewModel}">
+            <local:DeliveryListView></local:DeliveryListView>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModels:EmployeeListViewModel}">
+            <local:EmployeeListView></local:EmployeeListView>
+        </DataTemplate>
+    </Window.Resources>
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="4*"/>
+            
+        </Grid.ColumnDefinitions>
+        <DockPanel Grid.Column="0"
+                   LastChildFill="False"
+                   >
+            <Button Name="ProductsButton"
+                    DockPanel.Dock="Top" 
+                    Background="{x:Null}"
+                    Height="20"
+                    Width="auto"
+                    Content="Products"
+                    VerticalContentAlignment="Center"
+                    ></Button>
+            <Button Name="InvoicesButton"
+                    DockPanel.Dock="Top" 
+                    Background="{x:Null}"
+                    Height="20"
+                    Width="auto"
+                    Content="Invoices"
+                    VerticalContentAlignment="Center"
+                    ></Button>
+            <Button Name="DeliveriesButton"
+                    DockPanel.Dock="Top" 
+                    Background="{x:Null}"
+                    Height="20"
+                    Width="auto"
+                    Content="Deliveries"
+                    VerticalContentAlignment="Center"
+                    ></Button>
+            <Button Name="ClientsButton"
+                    DockPanel.Dock="Top" 
+                    Background="{x:Null}"
+                    Height="20"
+                    Width="auto"
+                    Content="Clients"
+                    VerticalContentAlignment="Center"
+                    ></Button>
+            <Button Name="EmployeesButton"
+                    DockPanel.Dock="Top" 
+                    Background="{x:Null}"
+                    Height="20"
+                    Width="auto"
+                    Content="Employees"
+                    VerticalContentAlignment="Center"
+                    ></Button>
+            <Button Name="OrdersButton"
+                    DockPanel.Dock="top" 
+                    Background="{x:Null}"
+                    Height="20"
+                    Width="auto"
+                    Content="Orders"
+                    VerticalContentAlignment="Center"
+                    ></Button>
+          
+        </DockPanel>
+        <ContentControl Content="{Binding CurrentViewModel}"/>
+    </Grid>
+</Controls:MetroWindow>
