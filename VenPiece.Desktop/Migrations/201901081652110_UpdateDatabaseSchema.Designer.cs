@@ -7,13 +7,13 @@ namespace VenPiece.Desktop.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class UpdateProducts : IMigrationMetadata
+    public sealed partial class UpdateDatabaseSchema : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(UpdateProducts));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(UpdateDatabaseSchema));
         
         string IMigrationMetadata.Id
         {
-            get { return "201812291851197_UpdateProducts"; }
+            get { return "201901081652110_UpdateDatabaseSchema"; }
         }
         
         string IMigrationMetadata.Source

@@ -9,7 +9,7 @@ namespace VenPiece.Desktop.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(VenPiece.Desktop.VenPieceDbContext context)
