@@ -1,11 +1,11 @@
-﻿<Controls:MetroWindow x:Class="VenPiece.Desktop.Views.MainView"
+﻿<controls:MetroWindow x:Class="VenPiece.Desktop.Views.MainView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:VenPiece.Desktop.Views"
         xmlns:viewModels="clr-namespace:VenPiece.Desktop.ViewModels"   
-        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         mc:Ignorable="d"
         Title="MainView" Height="600" Width="600"
         ShowIconOnTitleBar="True"
@@ -33,14 +33,17 @@
         <DataTemplate DataType="{x:Type viewModels:EmployeeListViewModel}">
             <local:EmployeeListView></local:EmployeeListView>
         </DataTemplate>
+        <DataTemplate DataType="{x:Type viewModels:AddEditClientViewModel}">
+            <local:AddEditClientView></local:AddEditClientView>
+        </DataTemplate>
     </Window.Resources>
     
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="4*"/>
-            
         </Grid.ColumnDefinitions>
+
         <DockPanel Grid.Column="0"
                    LastChildFill="False"
                    >
@@ -51,7 +54,9 @@
                     Width="auto"
                     Content="Products"
                     VerticalContentAlignment="Center"
-                    ></Button>
+                    Command="{Binding NavCommand}"
+                    CommandParameter="products"
+                    />
             <Button Name="InvoicesButton"
                     DockPanel.Dock="Top" 
                     Background="{x:Null}"
@@ -59,6 +64,8 @@
                     Width="auto"
                     Content="Invoices"
                     VerticalContentAlignment="Center"
+                    Command="{Binding NavCommand}"
+                    CommandParameter="invoices"
                     ></Button>
             <Button Name="DeliveriesButton"
                     DockPanel.Dock="Top" 
@@ -67,6 +74,8 @@
                     Width="auto"
                     Content="Deliveries"
                     VerticalContentAlignment="Center"
+                    Command="{Binding NavCommand}"
+                    CommandParameter="deliveries"
                     ></Button>
             <Button Name="ClientsButton"
                     DockPanel.Dock="Top" 
@@ -75,6 +84,8 @@
                     Width="auto"
                     Content="Clients"
                     VerticalContentAlignment="Center"
+                    Command="{Binding NavCommand}"
+                    CommandParameter="clients"
                     ></Button>
             <Button Name="EmployeesButton"
                     DockPanel.Dock="Top" 
@@ -82,6 +93,8 @@
                     Height="20"
                     Width="auto"
                     Content="Employees"
+                    Command="{Binding NavCommand}"
+                    CommandParameter="employees"
                     VerticalContentAlignment="Center"
                     ></Button>
             <Button Name="OrdersButton"
@@ -90,10 +103,13 @@
                     Height="20"
                     Width="auto"
                     Content="Orders"
+                    Command="{Binding NavCommand}"
+                    CommandParameter="orders"
                     VerticalContentAlignment="Center"
                     ></Button>
           
         </DockPanel>
-        <ContentControl Content="{Binding CurrentViewModel}"/>
+        <ContentControl Grid.Column="1" Content="{Binding CurrentViewModel}"/>
     </Grid>
-</Controls:MetroWindow>
+</controls:MetroWindow>
+

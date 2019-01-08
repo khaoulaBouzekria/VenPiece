@@ -13,12 +13,9 @@ namespace VenPiece.Desktop.Repository
 
         public InternalUserData GetUserByUsername(string username)
         {
-            return VPDbContext.Users.FirstOrDefault(s => s.Username == username);
+            return VpDbContext.Users.FirstOrDefault(s => s.Username == username);
         }
 
-        public VenPieceDbContext VPDbContext
-        {
-            get { return Context as VenPieceDbContext; }
-        }
+        public VenPieceDbContext VpDbContext => Context as VenPieceDbContext;
     }
 }

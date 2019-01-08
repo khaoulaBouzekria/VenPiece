@@ -7,6 +7,19 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
-            
+        <DataGrid ItemsSource="{Binding Invoices}"
+                  AutoGenerateColumns="False"
+                  CanUserAddRows="False"
+        >
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Order.Client.Name}"
+                                    Header="Client Name"/>
+                <DataGridTextColumn Binding="{Binding Date}"
+                                    Header="Date"/>
+                <DataGridTextColumn Binding="{Binding PayementDeadline}"
+                                    Header="Payement Deadline"/>
+            </DataGrid.Columns>
+
+        </DataGrid>   
     </Grid>
 </UserControl>

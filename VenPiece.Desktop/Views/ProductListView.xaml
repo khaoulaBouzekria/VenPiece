@@ -7,6 +7,21 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
-            
+        <DataGrid ItemsSource="{Binding Products}"
+                  AutoGenerateColumns="False"
+                  CanUserAddRows="False"
+        >
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Designation}"
+                                    Header="Designation"/>
+                <DataGridTextColumn Binding="{Binding Price}"
+                                    Header="Price"/>
+                <DataGridTextColumn Binding="{Binding Quantity}"
+                                    Header="Quantity"/>
+                <DataGridTextColumn Binding="{Binding Description}"
+                                    Header="Description"/>
+            </DataGrid.Columns>
+
+        </DataGrid>
     </Grid>
 </UserControl>

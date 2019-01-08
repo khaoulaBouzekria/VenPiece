@@ -90,6 +90,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="BindableBase.cs" />
     <Compile Include="Converters\DoNothingConverter.cs" />
     <Compile Include="Migrations\201812232041032_CreateClients.cs" />
     <Compile Include="Migrations\201812232041032_CreateClients.Designer.cs">
@@ -124,6 +125,8 @@
     <Compile Include="Models\InternalUserData.cs" />
     <Compile Include="Models\OrderItem.cs" />
     <Compile Include="Models\User.cs" />
+    <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="RelayCommand.cs" />
     <Compile Include="Repository\ClientRepository.cs" />
     <Compile Include="Repository\DeliveryRepository.cs" />
     <Compile Include="Repository\EmployeeRepository.cs" />
@@ -149,6 +152,7 @@
     <Compile Include="UnitOfWork\IUnitOfWork.cs" />
     <Compile Include="UnitOfWork\UnitOfWork.cs" />
     <Compile Include="VenPieceDbContext.cs" />
+    <Compile Include="ViewModels\AddEditClientViewModel.cs" />
     <Compile Include="ViewModels\AuthenticationViewModel.cs" />
     <Compile Include="ViewModels\ClientListViewModel.cs" />
     <Compile Include="ViewModels\DeliveryListViewModel.cs" />
@@ -159,6 +163,9 @@
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\OrderListViewModel.cs" />
     <Compile Include="ViewModels\ProductListViewModel.cs" />
+    <Compile Include="Views\AddEditClientView.xaml.cs">
+      <DependentUpon>AddEditClientView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\AdminWindow.xaml.cs">
       <DependentUpon>AdminWindow.xaml</DependentUpon>
     </Compile>
@@ -263,6 +270,10 @@
     <Page Include="Resources\IconsNonShared.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\AddEditClientView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\AdminWindow.xaml">
       <SubType>Designer</SubType>

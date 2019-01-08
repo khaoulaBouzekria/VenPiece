@@ -15,6 +15,10 @@ namespace VenPiece.Desktop.Repository
             Context = context;
         }
 
+        public Repository()
+        {
+        }
+
         public TEntity Get(int id)
         {
             // Here we are working with a DbContext, not PlutoContext. So we don't have DbSets 

@@ -1,9 +1,12 @@
-﻿using VenPiece.Desktop.Models;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using VenPiece.Desktop.Models;
 
 namespace VenPiece.Desktop.Repository
 {
     public interface IEmployeeRepository : IRepository<Employee>
     {
-        Employee GetEmployeeById(string id);
+        Task<Employee> GetEmployeeByIdAsync(string id);
+        Task<List<Employee>> GetEmployeesAsync();
     }
 }

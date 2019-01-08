@@ -1,9 +1,12 @@
-﻿using VenPiece.Desktop.Models;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using VenPiece.Desktop.Models;
 
 namespace VenPiece.Desktop.Repository
 {
     public interface IClientRepository : IRepository<Client>
     {
-        Client GetClientById(string Id);
+        Task<Client> GetClientByIdAsync(string Id);
+        Task<List<Client>> GetClientsAsync();
     }
 }

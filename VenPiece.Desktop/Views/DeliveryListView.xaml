@@ -7,6 +7,21 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
-            
+        <DataGrid ItemsSource="{Binding Deliveries}"
+                  AutoGenerateColumns="False"
+                  CanUserAddRows="False"
+        >
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Order.Client.Name}"
+                                    Header="Client Name"/>
+                <DataGridTextColumn Binding="{Binding Date}"
+                                    Header="Date"/>
+                <DataGridTextColumn Binding="{Binding Weight}"
+                                    Header="Weight"/>
+                <DataGridTextColumn Binding="{Binding NumberOfPackages}"
+                                    Header="Number of Packages"/>
+            </DataGrid.Columns>
+
+        </DataGrid>
     </Grid>
 </UserControl>

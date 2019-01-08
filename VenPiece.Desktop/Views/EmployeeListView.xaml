@@ -7,6 +7,27 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
-            
+        <DataGrid ItemsSource="{Binding Employees}"
+                  AutoGenerateColumns="False"
+                  CanUserAddRows="False"
+        >
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding FirstName}"
+                                    Header="First Name"/>
+                <DataGridTextColumn Binding="{Binding LastName}"
+                                    Header="Last Name"/>
+                <DataGridTextColumn Binding="{Binding DateOfBirth}"
+                                    Header="Date Of Birth"/>
+                <DataGridTextColumn Binding="{Binding Gender}"
+                                    Header="Gender"/>
+                <DataGridTextColumn Binding="{Binding Department}"
+                                    Header="Department"/>
+                <DataGridTextColumn Binding="{Binding RecruitmentDate}"
+                                    Header="Recruitment Date"/>
+                <DataGridTextColumn Binding="{Binding EndOfEmployementDate}"
+                                    Header="End Of Employement Date"/>
+            </DataGrid.Columns>
+
+        </DataGrid>    
     </Grid>
 </UserControl>

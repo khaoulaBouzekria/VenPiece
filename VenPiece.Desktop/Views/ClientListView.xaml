@@ -6,7 +6,42 @@
              xmlns:local="clr-namespace:VenPiece.Desktop.Views"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
+    
     <Grid>
-            
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+            <Grid>
+                <Button Content="Add Client"
+                        Command="{Binding AddClientCommand}"
+                        HorizontalAlignment="Left"></Button>
+            </Grid>
+            <DataGrid ItemsSource="{Binding Clients}"
+                      AutoGenerateColumns="False"
+                      CanUserAddRows="False"
+                      Grid.Row="1">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding Name}"
+                                        Header="Name"/>
+                    <DataGridTextColumn Binding="{Binding Address}"
+                                        Header="Address"/>
+                    <DataGridTextColumn Binding="{Binding Type}"
+                                        Header="Type"/>
+                    <DataGridTextColumn Binding="{Binding Phone}"
+                                        Header="Phone Number"/>
+                    <DataGridTextColumn Binding="{Binding Email}"
+                                        Header="Email"/>
+                    <DataGridTextColumn Binding="{Binding City}"
+                                        Header="City"/>
+                    <DataGridTextColumn Binding="{Binding Street}"
+                                        Header="Street"/>
+                    <DataGridTextColumn Binding="{Binding Country}"
+                                        Header="Country"/>
+                    <DataGridTextColumn Binding="{Binding Zip}"
+                                        Header="Postal Code"/>
+                </DataGrid.Columns>
+
+            </DataGrid>
     </Grid>
 </UserControl>
