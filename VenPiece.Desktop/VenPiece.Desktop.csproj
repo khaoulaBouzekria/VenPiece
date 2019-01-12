@@ -120,6 +120,10 @@
     <Compile Include="Migrations\201901081652110_UpdateDatabaseSchema.Designer.cs">
       <DependentUpon>201901081652110_UpdateDatabaseSchema.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201901111741089_UpdateEmployee.cs" />
+    <Compile Include="Migrations\201901111741089_UpdateEmployee.Designer.cs">
+      <DependentUpon>201901111741089_UpdateEmployee.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DeliveryItem.cs" />
     <Compile Include="Models\InternalUserData.cs" />
@@ -246,6 +250,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201901081652110_UpdateDatabaseSchema.resx">
       <DependentUpon>201901081652110_UpdateDatabaseSchema.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901111741089_UpdateEmployee.resx">
+      <DependentUpon>201901111741089_UpdateEmployee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

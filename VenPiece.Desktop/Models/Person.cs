@@ -8,10 +8,6 @@ namespace VenPiece.Desktop.Models
     public abstract class Person
     {
         /// <summary>
-        /// Person identifier
-        /// </summary>
-        public Guid PersonId { get; set; }
-        /// <summary>
         /// Person first name
         /// </summary>
         public string FirstName { get; set; }
