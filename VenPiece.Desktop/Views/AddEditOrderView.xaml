@@ -1,0 +1,179 @@
+﻿<controls:MetroWindow x:Class="VenPiece.Desktop.Views.AddEditOrderView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+       xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:local="clr-namespace:VenPiece.Desktop.Views"
+        mc:Ignorable="d"
+        Title="AddEditOrderView" Height="700" Width="700">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="4*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Name="OrderLabel"
+               Height="100"
+               Width="300"
+               Content="ORDER"
+               FontFamily="Arial"
+               FontSize="50"
+               Foreground="#C2185B"
+               FontStyle="Normal"
+               HorizontalContentAlignment="Center"
+               Grid.ColumnSpan="3"
+               Grid.Row="0">
+            <Label.Effect>
+                <DropShadowEffect/>
+            </Label.Effect>
+
+        </Label>
+        <TextBox Name="OrderId"
+                 Height="40" 
+                 Width="250"
+                 Background="{x:Null}"
+                 controls:TextBoxHelper.Watermark="Order Id"
+                 Foreground="#C2185B"
+                 Grid.Row="1"
+                 Grid.Column="0"
+                 VerticalContentAlignment="Center"
+                 FontSize="15">
+            <TextBox.Effect>
+                <DropShadowEffect/>
+            </TextBox.Effect>
+        </TextBox>
+
+        <TextBox Name="ItemsTotal"
+                 Height="40" 
+                 Width="250"
+                 VerticalAlignment="Top"
+                 Background="{x:Null}"
+                 Foreground="#C2185B"
+                 controls:TextBoxHelper.Watermark="Items Total"
+                 Grid.Row="5"
+                 Grid.ColumnSpan="3"
+                 VerticalContentAlignment="Center"
+                 FontSize="15">
+            <TextBox.Effect>
+                <DropShadowEffect/>
+            </TextBox.Effect>
+        </TextBox>
+        <TextBox Name="State"
+                 Height="40" 
+                 Width="250"
+                 Background="{x:Null}"
+                 Foreground="#C2185B"
+                 controls:TextBoxHelper.Watermark="State"
+                 Grid.Row="2"
+                 Grid.Column="2"
+                 VerticalContentAlignment="Center"
+                 FontSize="15">
+            <TextBox.Effect>
+                <DropShadowEffect/>
+            </TextBox.Effect>
+        </TextBox>
+
+        <TextBox Name="Phone"
+                 Height="40" 
+                 Width="250"
+                 Background="{x:Null}"
+                 Foreground="#C2185B"
+                 controls:TextBoxHelper.Watermark="Phone number"
+                 Grid.Row="2"
+                 Grid.Column="0"
+                 VerticalContentAlignment="Center"
+                 FontSize="15">
+            <TextBox.Effect>
+                <DropShadowEffect/>
+            </TextBox.Effect>
+        </TextBox>
+        <TextBox Name="ClientId"
+                 Height="40" 
+                 Width="250"
+                 Background="{x:Null}"
+                 Foreground="#C2185B"
+                 controls:TextBoxHelper.Watermark="Client Id"
+                 Grid.Row="1"
+                 Grid.Column="2"
+                 VerticalContentAlignment="Center"
+                 FontSize="15">
+            <TextBox.Effect>
+                <DropShadowEffect/>
+            </TextBox.Effect>
+        </TextBox>
+
+        <DatePicker Name="OrderDate"
+                           Height="40" 
+                           Width="250"
+                           Background="{x:Null}"
+                           controls:TextBoxHelper.Watermark="Order date"
+                           Grid.Row="3"
+                           Grid.Column="0"
+                           VerticalAlignment="Center"
+                           FontSize="15"
+                    Foreground="#C2185B"
+            >
+            <DatePicker.Effect>
+                <DropShadowEffect/>
+            </DatePicker.Effect>
+        </DatePicker>
+        <DataGrid ItemsSource="{Binding Products}"
+                  AutoGenerateColumns="False"
+                  CanUserAddRows="False"
+                  Grid.Row="4"
+                  Grid.ColumnSpan="3"
+                  Height="150"
+                  Width="500"
+                  FontSize="15"
+                  Background="{x:Null}"
+                  
+                  >
+            <DataGrid.Columns>
+                <DataGridCheckBoxColumn ElementStyle="{DynamicResource MetroDataGridCheckBox}"
+                                        EditingElementStyle="{DynamicResource MetroDataGridCheckBox}"
+                                        Header="Is Selected"
+                                        Binding="{Binding RelativeSource={RelativeSource AncestorType=DataGridRow},
+                                         Path=IsSelected, 
+                                         Mode=OneWay}"/>
+                <DataGridTextColumn Binding="{Binding Designation}"
+                                    Header="Designation"/>
+                    <DataGridTextColumn Binding="{Binding Price}"
+                                    Header="Price"/>
+                    <DataGridTextColumn Binding="{Binding Quantity}"
+                                    Header="Quantity"/>
+                    <DataGridTextColumn Binding="{Binding Description}"
+                                    Header="Description"/>
+            </DataGrid.Columns>
+            <DataGridRowsPresenter>
+
+            </DataGridRowsPresenter>
+        </DataGrid>
+        <Button Name="SaveOrder"
+                Content="Save"
+                Grid.Row="5"
+                Grid.ColumnSpan="3"
+                Height="40"
+                Width="130"
+                VerticalAlignment="Bottom"
+                Background="{x:Null}"
+                FontSize="15"
+                Cursor="Hand"
+                Foreground="#C2185B"
+                >
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+    </Grid>
+</controls:MetroWindow>

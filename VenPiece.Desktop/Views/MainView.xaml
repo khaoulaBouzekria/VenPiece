@@ -12,6 +12,7 @@
         WindowStartupLocation="CenterScreen"
         GlowBrush="Black"
         BorderThickness="0"
+        Icon="../Media/LogoIcon 2.png"
         >
 
     <Window.Resources>
@@ -46,67 +47,91 @@
 
         <DockPanel Grid.Column="0"
                    LastChildFill="False"
-                   >
+                   Background="#C2185B">
             <Button Name="ProductsButton"
                     DockPanel.Dock="Top" 
                     Background="{x:Null}"
-                    Height="20"
+                    Height="40"
                     Width="auto"
                     Content="Products"
                     VerticalContentAlignment="Center"
                     Command="{Binding NavCommand}"
                     CommandParameter="products"
-                    />
+                    >
+                <Button.Effect>
+                    <DropShadowEffect/>
+                </Button.Effect>
+            </Button>
             <Button Name="InvoicesButton"
                     DockPanel.Dock="Top" 
                     Background="{x:Null}"
-                    Height="20"
+                    Height="40"
                     Width="auto"
                     Content="Invoices"
                     VerticalContentAlignment="Center"
                     Command="{Binding NavCommand}"
                     CommandParameter="invoices"
-                    ></Button>
+                    >
+                <Button.Effect>
+                    <DropShadowEffect/>
+                </Button.Effect>
+            </Button>
             <Button Name="DeliveriesButton"
                     DockPanel.Dock="Top" 
                     Background="{x:Null}"
-                    Height="20"
+                    Height="40"
                     Width="auto"
                     Content="Deliveries"
                     VerticalContentAlignment="Center"
                     Command="{Binding NavCommand}"
                     CommandParameter="deliveries"
-                    ></Button>
+                    >
+                <Button.Effect>
+                    <DropShadowEffect/>
+                </Button.Effect>
+            </Button>
             <Button Name="ClientsButton"
                     DockPanel.Dock="Top" 
                     Background="{x:Null}"
-                    Height="20"
+                    Height="40"
                     Width="auto"
                     Content="Clients"
                     VerticalContentAlignment="Center"
                     Command="{Binding NavCommand}"
                     CommandParameter="clients"
-                    ></Button>
+                    >
+                <Button.Effect>
+                    <DropShadowEffect/>
+                </Button.Effect>
+            </Button>
             <Button Name="EmployeesButton"
                     DockPanel.Dock="Top" 
                     Background="{x:Null}"
-                    Height="20"
+                    Height="40"
                     Width="auto"
                     Content="Employees"
                     Command="{Binding NavCommand}"
                     CommandParameter="employees"
                     VerticalContentAlignment="Center"
-                    ></Button>
+                    >
+                <Button.Effect>
+                    <DropShadowEffect/>
+                </Button.Effect>
+            </Button>
             <Button Name="OrdersButton"
                     DockPanel.Dock="top" 
                     Background="{x:Null}"
-                    Height="20"
+                    Height="40"
                     Width="auto"
                     Content="Orders"
                     Command="{Binding NavCommand}"
                     CommandParameter="orders"
                     VerticalContentAlignment="Center"
-                    ></Button>
+                    >
+                <Button.Effect>
+                    <DropShadowEffect/>
+                </Button.Effect>
+            </Button>
           
         </DockPanel>
         <ContentControl Grid.Column="1" Content="{Binding CurrentViewModel}"/>

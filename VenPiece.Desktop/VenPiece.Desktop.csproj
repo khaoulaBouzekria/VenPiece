@@ -153,6 +153,7 @@
     <Compile Include="UnitOfWork\UnitOfWork.cs" />
     <Compile Include="VenPieceDbContext.cs" />
     <Compile Include="ViewModels\AddEditClientViewModel.cs" />
+    <Compile Include="ViewModels\AddEditOrderViewModel.cs" />
     <Compile Include="ViewModels\AuthenticationViewModel.cs" />
     <Compile Include="ViewModels\ClientListViewModel.cs" />
     <Compile Include="ViewModels\DeliveryListViewModel.cs" />
@@ -165,6 +166,9 @@
     <Compile Include="ViewModels\ProductListViewModel.cs" />
     <Compile Include="Views\AddEditClientView.xaml.cs">
       <DependentUpon>AddEditClientView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddEditOrderView.xaml.cs">
+      <DependentUpon>AddEditOrderView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\AdminWindow.xaml.cs">
       <DependentUpon>AdminWindow.xaml</DependentUpon>
@@ -272,6 +276,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Views\AddEditClientView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\AddEditOrderView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

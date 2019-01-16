@@ -7,9 +7,57 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="10*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Label Name="OrderLabel"
+               Height="100"
+               Width="300"
+               Content="PRODUCTS"
+               FontFamily="Arial"
+               FontSize="30"
+               Foreground="#C2185B"
+               FontStyle="Normal"
+               HorizontalContentAlignment="Center"
+               Grid.Column ="1"
+               Grid.Row="0"
+               HorizontalAlignment="Center">
+            <Label.Effect>
+                <DropShadowEffect/>
+            </Label.Effect>
+        </Label>
+        <Button Name="SaveOrder"
+                Content="New Product"
+                Grid.Row="1"
+                Grid.ColumnSpan="3"
+                Height="40"
+                Width="120"
+                VerticalAlignment="Center"
+                Background="{x:Null}"
+                FontSize="15"
+                Cursor="Hand"
+                Foreground="#C2185B"
+                >
+            <Button.Effect>
+                <DropShadowEffect/>
+            </Button.Effect>
+        </Button>
+
         <DataGrid ItemsSource="{Binding Products}"
                   AutoGenerateColumns="False"
                   CanUserAddRows="False"
+                  Grid.Column="1"
+                  Grid.Row="2"
+                  Foreground="#C2185B"
         >
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Designation}"
