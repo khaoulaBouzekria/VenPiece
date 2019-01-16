@@ -1,44 +1,67 @@
-﻿using MahApps.Metro.Controls;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Drawing.Text;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using VenPiece.Desktop.Models;
-using VenPiece.Desktop.Repository;
+using VenPiece.Data;
+using VenPiece.Data.Models;
+using VenPiece.Data.Repository;
 
 namespace VenPiece.Desktop.ViewModels
 {
+    /// <summary>
+    /// Client List View Model
+    /// </summary>
     public class ClientListViewModel  : BindableBase
     {
-        private static readonly VenPieceDbContext dbContext = new VenPieceDbContext();
-        private IClientRepository _repository = new ClientRepository(dbContext);
+        /// <summary>
+        /// DataBase Context
+        /// </summary>
+        /// <summary>
+        /// Client Repository initiation
+        /// </summary>
+        private IClientRepository _repository;
+
+        private List<Client> _allClients;
+        /// <summary>
+        /// Clients Observable Collection
+        /// </summary>
         private ObservableCollection<Client> _clients;
 
         public ObservableCollection<Client> Clients
         {
-            get { return _clients; }
-            set { SetProperty(ref _clients, value);}
+            get => _clients;
+            set => SetProperty(ref _clients, value);
         }
-        public RelayCommand AddClientCommand { get; private set; }
-        public RelayCommand<Client> EditClientCommand { get; private set; }
+        /// <summary>
+        /// Add Client Command
+        /// </summary>
+        public RelayCommand AddClientCommand { get; }
+        public RelayCommand<Client> EditClientCommand { get; }
+        public RelayCommand<Client> DeleteClientCommand { get; }
         public event Action<Client> AddClientRequested = delegate { };
         public event Action<Client> EditClientRequested = delegate { };
+
+        public event Action<Client> DeleteClientRequested = delegate { };
+
         /// <summary>
         /// Constructor
         /// </summary>
-        public ClientListViewModel()
+        public ClientListViewModel(IClientRepository clientRepository)
         {
+            _repository = clientRepository;
             LoadClients();
             AddClientCommand = new RelayCommand(OnAddClient);
             EditClientCommand = new RelayCommand<Client>(OnEditClient);
+            DeleteClientCommand = new RelayCommand<Client>(OnDeleteClient);
+        }
+
+        private void OnDeleteClient(Client client)
+        {
+            DeleteClientRequested(client);
         }
 
         private void OnEditClient(Client client)
         {
-            throw new NotImplementedException();
+            EditClientRequested(client);
         }
 
         private void OnAddClient()

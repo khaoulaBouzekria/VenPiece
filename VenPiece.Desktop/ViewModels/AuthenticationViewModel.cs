@@ -3,7 +3,7 @@ using System.ComponentModel;
 using System.Threading;
 using System.Windows.Controls;
 using System.Security;
-using VenPiece.Desktop.Models;
+using VenPiece.Data.Models;
 using VenPiece.Desktop.Security;
 using VenPiece.Desktop.Services;
 using VenPiece.Desktop.Views;

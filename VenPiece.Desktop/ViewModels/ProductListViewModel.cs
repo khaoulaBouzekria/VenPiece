@@ -1,31 +1,25 @@
-﻿using MahApps.Metro.Controls;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using VenPiece.Desktop.Models;
-using VenPiece.Desktop.Repository;
+﻿using System.Collections.ObjectModel;
+using VenPiece.Data;
+using VenPiece.Data.Models;
+using VenPiece.Data.Repository;
 
 namespace VenPiece.Desktop.ViewModels
 {
     public class ProductListViewModel : BindableBase
     {
-        public ProductListViewModel()
+        public ProductListViewModel(IProductRepository productRepository)
         {
+            _repository = productRepository;
             LoadProducts();
         }
 
-
-        private static readonly VenPieceDbContext dbContext = new VenPieceDbContext();
-        private IProductRepository _repository = new ProductRepository(dbContext);
+        private readonly IProductRepository _repository;
         private ObservableCollection<Product> _products;
 
         public ObservableCollection<Product> Products
         {
-            get { return _products; }
-            set { SetProperty(ref _products, value); }
+            get => _products;
+            set => SetProperty(ref _products, value);
         }
 
 

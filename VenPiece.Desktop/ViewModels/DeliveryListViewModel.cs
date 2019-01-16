@@ -1,24 +1,19 @@
-﻿using MahApps.Metro.Controls;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using VenPiece.Desktop.Models;
-using VenPiece.Desktop.Repository;
+﻿using System.Collections.ObjectModel;
+using VenPiece.Data;
+using VenPiece.Data.Models;
+using VenPiece.Data.Repository;
 
 namespace VenPiece.Desktop.ViewModels
 {
     public class DeliveryListViewModel : BindableBase
     {
-        public DeliveryListViewModel()
+        public DeliveryListViewModel(IDeliveryRepository deliveryRepository)
         {
+            _repository = deliveryRepository;
             LoadDeliveries();
         }
 
-        private static readonly VenPieceDbContext dbContext = new VenPieceDbContext();
-        private IDeliveryRepository _repository = new DeliveryRepository(dbContext);
+        private IDeliveryRepository _repository;
         private ObservableCollection<Delivery> _deliveries;
 
         public ObservableCollection<Delivery> Deliveries

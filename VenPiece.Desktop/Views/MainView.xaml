@@ -1,40 +1,42 @@
 ﻿<controls:MetroWindow x:Class="VenPiece.Desktop.Views.MainView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:VenPiece.Desktop.Views"
+        xmlns:views="clr-namespace:VenPiece.Desktop.Views"
         xmlns:viewModels="clr-namespace:VenPiece.Desktop.ViewModels"   
         xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         mc:Ignorable="d"
-        Title="MainView" Height="600" Width="600"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                      Title="MainView" Height="600" Width="600"
         ShowIconOnTitleBar="True"
         WindowStartupLocation="CenterScreen"
         GlowBrush="Black"
         BorderThickness="0"
         >
-
+    <Window.DataContext>
+        <viewModels:MainViewModel />
+    </Window.DataContext>
     <Window.Resources>
         <DataTemplate DataType="{x:Type viewModels:ClientListViewModel}">
-            <local:ClientListView></local:ClientListView>
+            <views:ClientListView></views:ClientListView>
         </DataTemplate>
         <DataTemplate DataType="{x:Type viewModels:ProductListViewModel}">
-            <local:ProductListView></local:ProductListView>
+            <views:ProductListView></views:ProductListView>
         </DataTemplate>
         <DataTemplate DataType="{x:Type viewModels:InvoiceListViewModel}">
-            <local:InvoiceListView></local:InvoiceListView>
+            <views:InvoiceListView></views:InvoiceListView>
         </DataTemplate>
         <DataTemplate DataType="{x:Type viewModels:OrderListViewModel}">
-            <local:OrderListView></local:OrderListView>
+            <views:OrderListView></views:OrderListView>
         </DataTemplate>
         <DataTemplate DataType="{x:Type viewModels:DeliveryListViewModel}">
-            <local:DeliveryListView></local:DeliveryListView>
+            <views:DeliveryListView></views:DeliveryListView>
         </DataTemplate>
         <DataTemplate DataType="{x:Type viewModels:EmployeeListViewModel}">
-            <local:EmployeeListView></local:EmployeeListView>
+            <views:EmployeeListView></views:EmployeeListView>
         </DataTemplate>
         <DataTemplate DataType="{x:Type viewModels:AddEditClientViewModel}">
-            <local:AddEditClientView></local:AddEditClientView>
+            <views:AddEditClientView></views:AddEditClientView>
         </DataTemplate>
     </Window.Resources>
     

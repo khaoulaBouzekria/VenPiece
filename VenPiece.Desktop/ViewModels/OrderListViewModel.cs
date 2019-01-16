@@ -1,25 +1,20 @@
-﻿using MahApps.Metro.Controls;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using VenPiece.Desktop.Models;
-using VenPiece.Desktop.Repository;
+﻿using System.Collections.ObjectModel;
+using VenPiece.Data;
+using VenPiece.Data.Models;
+using VenPiece.Data.Repository;
 
 namespace VenPiece.Desktop.ViewModels
 {
     public class OrderListViewModel : BindableBase
     {
-        public OrderListViewModel()
+        public OrderListViewModel(IOrderRepository orderRepository)
         {
+            _repository = orderRepository;
             LoadOrders();
         }
-        
 
-        private static readonly VenPieceDbContext dbContext = new VenPieceDbContext();
-        private IOrderRepository _repository = new OrderRepository(dbContext);
+
+        private IOrderRepository _repository;
         private ObservableCollection<Order> _orders;
 
         public ObservableCollection<Order> Orders

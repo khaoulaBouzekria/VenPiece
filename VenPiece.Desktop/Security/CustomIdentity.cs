@@ -1,5 +1,4 @@
 ﻿using System.Security.Principal;
-using VenPiece.Desktop.Models;
 
 namespace VenPiece.Desktop.Security
 {

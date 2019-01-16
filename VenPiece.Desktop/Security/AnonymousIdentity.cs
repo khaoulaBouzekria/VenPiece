@@ -1,7 +1,4 @@
-﻿
-using VenPiece.Desktop.Models;
-
-namespace VenPiece.Desktop.Security
+﻿namespace VenPiece.Desktop.Security
 {
     public class AnonymousIdentity : CustomIdentity
     {

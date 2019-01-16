@@ -1,5 +1,5 @@
 ﻿
-using VenPiece.Desktop.Models;
+using VenPiece.Data.Models;
 
 namespace VenPiece.Desktop.Services
 {

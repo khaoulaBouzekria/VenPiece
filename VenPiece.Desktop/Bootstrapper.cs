@@ -1,10 +1,6 @@
-﻿using System;
-using System.Windows;
+﻿using System.Windows;
 using Caliburn.Micro;
-using VenPiece.Desktop.Security;
-using VenPiece.Desktop.Services;
 using VenPiece.Desktop.ViewModels;
-using VenPiece.Desktop.Views;
 
 namespace VenPiece.Desktop
 {

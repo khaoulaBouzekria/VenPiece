@@ -1,23 +1,18 @@
-﻿using MahApps.Metro.Controls;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using VenPiece.Desktop.Models;
-using VenPiece.Desktop.Repository;
+﻿using System.Collections.ObjectModel;
+using VenPiece.Data;
+using VenPiece.Data.Models;
+using VenPiece.Data.Repository;
 
 namespace VenPiece.Desktop.ViewModels
 {
     public class InvoiceListViewModel : BindableBase
     {
-        public InvoiceListViewModel()
+        public InvoiceListViewModel(IInvoiceRepository invoiceRepository)
         {
+            _repository = invoiceRepository;
             LoadInvoices();
         }
-        private static readonly VenPieceDbContext dbContext = new VenPieceDbContext();
-        private IInvoiceRepository _repository = new InvoiceRepository(dbContext);
+        private IInvoiceRepository _repository;
         private ObservableCollection<Invoice> _invoices;
 
         public ObservableCollection<Invoice> Invoices

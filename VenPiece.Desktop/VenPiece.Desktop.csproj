@@ -42,6 +42,9 @@
     <Reference Include="Caliburn.Micro.Platform.Core, Version=3.2.0.0, Culture=neutral, PublicKeyToken=8e5891231f2ed21f, processorArchitecture=MSIL">
       <HintPath>..\packages\Caliburn.Micro.3.2.0\lib\net45\Caliburn.Micro.Platform.Core.dll</HintPath>
     </Reference>
+    <Reference Include="CommonServiceLocator, Version=2.0.4.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.13\lib\net46\CommonServiceLocator.dll</HintPath>
+    </Reference>
     <Reference Include="ControlzEx, Version=3.0.2.4, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\ControlzEx.3.0.2.4\lib\net45\ControlzEx.dll</HintPath>
     </Reference>
@@ -59,23 +62,38 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Data" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.ConfigurationManager, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Configuration.ConfigurationManager.4.4.1\lib\net461\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\ControlzEx.3.0.2.4\lib\net45\System.Windows.Interactivity.dll</HintPath>
     </Reference>
-    <Reference Include="System.Xml" />
-    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="UIAutomationProvider" />
-    <Reference Include="UIAutomationTypes" />
-    <Reference Include="WindowsFormsIntegration" />
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Unity.Abstractions, Version=3.3.1.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.13\lib\net46\Unity.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Configuration, Version=5.2.5.0, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.13\lib\net46\Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Container, Version=5.8.13.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.13\lib\net46\Unity.Container.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Interception, Version=5.5.5.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.13\lib\net46\Unity.Interception.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Interception.Configuration, Version=5.1.7.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.13\lib\net46\Unity.Interception.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RegistrationByConvention, Version=2.1.9.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.13\lib\net46\Unity.RegistrationByConvention.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.ServiceLocation, Version=2.1.2.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.8.13\lib\net46\Unity.ServiceLocation.dll</HintPath>
     </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
@@ -92,70 +110,18 @@
     </Compile>
     <Compile Include="BindableBase.cs" />
     <Compile Include="Converters\DoNothingConverter.cs" />
-    <Compile Include="Migrations\201812232041032_CreateClients.cs" />
-    <Compile Include="Migrations\201812232041032_CreateClients.Designer.cs">
-      <DependentUpon>201812232041032_CreateClients.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812232042011_CreateOrders.cs" />
-    <Compile Include="Migrations\201812232042011_CreateOrders.Designer.cs">
-      <DependentUpon>201812232042011_CreateOrders.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812232042512_CreateProducts.cs" />
-    <Compile Include="Migrations\201812232042512_CreateProducts.Designer.cs">
-      <DependentUpon>201812232042512_CreateProducts.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812232043573_CreateInvoices.cs" />
-    <Compile Include="Migrations\201812232043573_CreateInvoices.Designer.cs">
-      <DependentUpon>201812232043573_CreateInvoices.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812232044225_CreateDeliveries.cs" />
-    <Compile Include="Migrations\201812232044225_CreateDeliveries.Designer.cs">
-      <DependentUpon>201812232044225_CreateDeliveries.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201812232045336_CreateEmployees.cs" />
-    <Compile Include="Migrations\201812232045336_CreateEmployees.Designer.cs">
-      <DependentUpon>201812232045336_CreateEmployees.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201901081652110_UpdateDatabaseSchema.cs" />
-    <Compile Include="Migrations\201901081652110_UpdateDatabaseSchema.Designer.cs">
-      <DependentUpon>201901081652110_UpdateDatabaseSchema.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201901111741089_UpdateEmployee.cs" />
-    <Compile Include="Migrations\201901111741089_UpdateEmployee.Designer.cs">
-      <DependentUpon>201901111741089_UpdateEmployee.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\DeliveryItem.cs" />
-    <Compile Include="Models\InternalUserData.cs" />
-    <Compile Include="Models\OrderItem.cs" />
-    <Compile Include="Models\User.cs" />
+    <Compile Include="Converters\NegatableBooleanToVisibilityConverter.cs" />
+    <Compile Include="Helpers\ContainerHelper.cs" />
+    <Compile Include="Models\ClientDTO.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="RelayCommand.cs" />
-    <Compile Include="Repository\ClientRepository.cs" />
-    <Compile Include="Repository\DeliveryRepository.cs" />
-    <Compile Include="Repository\EmployeeRepository.cs" />
-    <Compile Include="Repository\IClientRepository.cs" />
-    <Compile Include="Repository\IDeliveryRepository.cs" />
-    <Compile Include="Repository\IEmployeeRepository.cs" />
-    <Compile Include="Repository\IInvoiceRepository.cs" />
-    <Compile Include="Repository\InvoiceRepository.cs" />
-    <Compile Include="Repository\IOrderRepository.cs" />
-    <Compile Include="Repository\IProductRepository.cs" />
-    <Compile Include="Repository\IRepository.cs" />
-    <Compile Include="Repository\IUserRepository.cs" />
-    <Compile Include="Repository\OrderRepository.cs" />
-    <Compile Include="Repository\ProductRepository.cs" />
-    <Compile Include="Repository\Repository.cs" />
-    <Compile Include="Repository\UserRepository.cs" />
     <Compile Include="Security\AnonymousIdentity.cs" />
     <Compile Include="Security\CustomIdentity.cs" />
     <Compile Include="Security\CustomPrincipal.cs" />
     <Compile Include="Security\DelegateCommand.cs" />
     <Compile Include="Services\AuthenticationService.cs" />
     <Compile Include="Services\IAuthenticationService.cs" />
-    <Compile Include="UnitOfWork\IUnitOfWork.cs" />
-    <Compile Include="UnitOfWork\UnitOfWork.cs" />
-    <Compile Include="VenPieceDbContext.cs" />
+    <Compile Include="ValidatableBindableBase.cs" />
     <Compile Include="ViewModels\AddEditClientViewModel.cs" />
     <Compile Include="ViewModels\AuthenticationViewModel.cs" />
     <Compile Include="ViewModels\ClientListViewModel.cs" />
@@ -207,16 +173,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bootstrapper.cs" />
-    <Compile Include="Models\Client.cs" />
-    <Compile Include="Models\ClientType.cs" />
-    <Compile Include="Models\Delivery.cs" />
-    <Compile Include="Models\Departments.cs" />
-    <Compile Include="Models\Employee.cs" />
-    <Compile Include="Models\Invoice.cs" />
-    <Compile Include="Models\Order.cs" />
-    <Compile Include="Models\Person.cs" />
-    <Compile Include="Models\Product.cs" />
-    <Compile Include="Models\Gender.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -230,36 +186,13 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Migrations\201812232041032_CreateClients.resx">
-      <DependentUpon>201812232041032_CreateClients.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812232042011_CreateOrders.resx">
-      <DependentUpon>201812232042011_CreateOrders.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812232042512_CreateProducts.resx">
-      <DependentUpon>201812232042512_CreateProducts.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812232043573_CreateInvoices.resx">
-      <DependentUpon>201812232043573_CreateInvoices.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812232044225_CreateDeliveries.resx">
-      <DependentUpon>201812232044225_CreateDeliveries.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201812232045336_CreateEmployees.resx">
-      <DependentUpon>201812232045336_CreateEmployees.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201901081652110_UpdateDatabaseSchema.resx">
-      <DependentUpon>201901081652110_UpdateDatabaseSchema.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201901111741089_UpdateEmployee.resx">
-      <DependentUpon>201901111741089_UpdateEmployee.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\VenPiece.Desktop.Models.Client.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -348,6 +281,11 @@
   <ItemGroup>
     <Resource Include="Resources\Entypo-license.txt" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\VenPiece.Data\VenPiece.Data.csproj">
+      <Project>{741adf1a-ac54-4fa6-80d7-1bc28b50be6a}</Project>
+      <Name>VenPiece.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

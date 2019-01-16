@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{741ADF1A-AC54-4FA6-80D7-1BC28B50BE6A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VenPiece.Data</RootNamespace>
+    <AssemblyName>VenPiece.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Migrations\201812232041032_CreateClients.cs" />
+    <Compile Include="Migrations\201812232041032_CreateClients.Designer.cs">
+      <DependentUpon>201812232041032_CreateClients.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812232042011_CreateOrders.cs" />
+    <Compile Include="Migrations\201812232042011_CreateOrders.Designer.cs">
+      <DependentUpon>201812232042011_CreateOrders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812232042512_CreateProducts.cs" />
+    <Compile Include="Migrations\201812232042512_CreateProducts.Designer.cs">
+      <DependentUpon>201812232042512_CreateProducts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812232043573_CreateInvoices.cs" />
+    <Compile Include="Migrations\201812232043573_CreateInvoices.Designer.cs">
+      <DependentUpon>201812232043573_CreateInvoices.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812232044225_CreateDeliveries.cs" />
+    <Compile Include="Migrations\201812232044225_CreateDeliveries.Designer.cs">
+      <DependentUpon>201812232044225_CreateDeliveries.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201812232045336_CreateEmployees.cs" />
+    <Compile Include="Migrations\201812232045336_CreateEmployees.Designer.cs">
+      <DependentUpon>201812232045336_CreateEmployees.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901081652110_UpdateDatabaseSchema.cs" />
+    <Compile Include="Migrations\201901081652110_UpdateDatabaseSchema.Designer.cs">
+      <DependentUpon>201901081652110_UpdateDatabaseSchema.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201901111741089_UpdateEmployee.cs" />
+    <Compile Include="Migrations\201901111741089_UpdateEmployee.Designer.cs">
+      <DependentUpon>201901111741089_UpdateEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Client.cs" />
+    <Compile Include="Models\ClientType.cs" />
+    <Compile Include="Models\Delivery.cs" />
+    <Compile Include="Models\DeliveryItem.cs" />
+    <Compile Include="Models\Departments.cs" />
+    <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\Gender.cs" />
+    <Compile Include="Models\InternalUserData.cs" />
+    <Compile Include="Models\Invoice.cs" />
+    <Compile Include="Models\Order.cs" />
+    <Compile Include="Models\OrderItem.cs" />
+    <Compile Include="Models\Person.cs" />
+    <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Properties\Annotations.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\ClientRepository.cs" />
+    <Compile Include="Repository\DeliveryRepository.cs" />
+    <Compile Include="Repository\EmployeeRepository.cs" />
+    <Compile Include="Repository\IClientRepository.cs" />
+    <Compile Include="Repository\IDeliveryRepository.cs" />
+    <Compile Include="Repository\IEmployeeRepository.cs" />
+    <Compile Include="Repository\IInvoiceRepository.cs" />
+    <Compile Include="Repository\InvoiceRepository.cs" />
+    <Compile Include="Repository\IOrderRepository.cs" />
+    <Compile Include="Repository\IProductRepository.cs" />
+    <Compile Include="Repository\IRepository.cs" />
+    <Compile Include="Repository\IUserRepository.cs" />
+    <Compile Include="Repository\OrderRepository.cs" />
+    <Compile Include="Repository\ProductRepository.cs" />
+    <Compile Include="Repository\Repository.cs" />
+    <Compile Include="Repository\UserRepository.cs" />
+    <Compile Include="UnitOfWork\IUnitOfWork.cs" />
+    <Compile Include="UnitOfWork\UnitOfWork.cs" />
+    <Compile Include="VenPieceDbContext.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201812232041032_CreateClients.resx">
+      <DependentUpon>201812232041032_CreateClients.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812232042011_CreateOrders.resx">
+      <DependentUpon>201812232042011_CreateOrders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812232042512_CreateProducts.resx">
+      <DependentUpon>201812232042512_CreateProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812232043573_CreateInvoices.resx">
+      <DependentUpon>201812232043573_CreateInvoices.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812232044225_CreateDeliveries.resx">
+      <DependentUpon>201812232044225_CreateDeliveries.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812232045336_CreateEmployees.resx">
+      <DependentUpon>201812232045336_CreateEmployees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901081652110_UpdateDatabaseSchema.resx">
+      <DependentUpon>201901081652110_UpdateDatabaseSchema.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901111741089_UpdateEmployee.resx">
+      <DependentUpon>201901111741089_UpdateEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

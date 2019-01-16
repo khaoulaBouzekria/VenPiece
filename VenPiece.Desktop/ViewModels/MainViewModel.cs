@@ -1,23 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using VenPiece.Desktop.Models;
+﻿using VenPiece.Data.Models;
+using Microsoft.Practices.Unity;
+using Unity;
+using VenPiece.Desktop.Helpers;
 
 namespace VenPiece.Desktop.ViewModels
 {
     public class MainViewModel : BindableBase
     {
-        private ClientListViewModel _clientListViewModel = new ClientListViewModel();
-        private OrderListViewModel _orderListViewModel = new OrderListViewModel();
-        private InvoiceListViewModel _invoiceListViewModel = new InvoiceListViewModel();
-        private DeliveryListViewModel _deliveryListViewModel = new DeliveryListViewModel();
-        private ProductListViewModel _productListViewModel = new ProductListViewModel();
-        private EmployeeListViewModel _employeeListViewModel = new EmployeeListViewModel();
-        private AddEditClientViewModel _addEditClientViewModel = new AddEditClientViewModel();
-
+        private ClientListViewModel _clientListViewModel = ContainerHelper.Container.Resolve<ClientListViewModel>();
+        private OrderListViewModel _orderListViewModel = ContainerHelper.Container.Resolve<OrderListViewModel>();
+        private InvoiceListViewModel _invoiceListViewModel = ContainerHelper.Container.Resolve<InvoiceListViewModel>();
+        private DeliveryListViewModel _deliveryListViewModel = ContainerHelper.Container.Resolve<DeliveryListViewModel>();
+        private ProductListViewModel _productListViewModel = ContainerHelper.Container.Resolve<ProductListViewModel>();
+        private EmployeeListViewModel _employeeListViewModel = ContainerHelper.Container.Resolve<EmployeeListViewModel>();
+        private AddEditClientViewModel _addEditClientViewModel = ContainerHelper.Container.Resolve<AddEditClientViewModel>();
+         
         private BindableBase _currentViewModel;
 
         public MainViewModel()
@@ -25,6 +22,8 @@ namespace VenPiece.Desktop.ViewModels
             NavCommand = new RelayCommand<string>(OnNav);
             _clientListViewModel.AddClientRequested += NavToAddClient;
             _clientListViewModel.EditClientRequested += NavToEditClient;
+            _clientListViewModel.DeleteClientRequested += NavToDeleteClient;
+            _addEditClientViewModel.Done += NavToClientList;
         }
 
         private void NavToEditClient(Client client)
@@ -40,8 +39,17 @@ namespace VenPiece.Desktop.ViewModels
             _addEditClientViewModel.SetClient(client);
             CurrentViewModel = _addEditClientViewModel;
         }
+        private void NavToDeleteClient(Client client)
+        {
+            _addEditClientViewModel.EditMode = false;
+            _addEditClientViewModel.SetClient(client);
+            CurrentViewModel = _addEditClientViewModel;
+        }
 
-
+        private void NavToClientList()
+        {
+            CurrentViewModel = _clientListViewModel;
+        }
         public BindableBase CurrentViewModel
         {
             get => _currentViewModel;

@@ -1,11 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
-using VenPiece.Desktop.Models;
-using VenPiece.Desktop.Repository;
+using VenPiece.Data;
+using VenPiece.Data.Models;
+using VenPiece.Data.Repository;
 
 namespace VenPiece.Desktop.Services
 {

@@ -1,23 +1,18 @@
-﻿using MahApps.Metro.Controls;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using VenPiece.Desktop.Models;
-using VenPiece.Desktop.Repository;
+﻿using System.Collections.ObjectModel;
+using VenPiece.Data;
+using VenPiece.Data.Models;
+using VenPiece.Data.Repository;
 
 namespace VenPiece.Desktop.ViewModels
 {
     public class EmployeeListViewModel : BindableBase
     {
-        public EmployeeListViewModel()
+        public EmployeeListViewModel(IEmployeeRepository employeeRepository)
         {
+            _repository = employeeRepository;
             LoadEmployees();
         }
-        private static readonly VenPieceDbContext dbContext = new VenPieceDbContext();
-        private IEmployeeRepository _repository = new EmployeeRepository(dbContext);
+        private IEmployeeRepository _repository ;
         private ObservableCollection<Employee> _employees;
 
         public ObservableCollection<Employee> Employees
